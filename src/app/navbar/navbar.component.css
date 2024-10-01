@@ -1,0 +1,27 @@
+
+.dashboard-header{
+    padding: 1.6px 10rem;
+    text-align: center;
+    background-color: #2F5597;
+    color: #fff;
+  }
+  nav .icon-bold {
+      font-weight: 900;
+    }
+    
+    ul li a {
+      font-weight: 600;
+      font-size: 18px;
+      
+    }
+    .bg-primary {
+      height: 100vh; 
+    }
+    
+    .nav-link {
+      padding: 10px;
+    }
+    
+    .nav .nav-item{
+      cursor: pointer;
+    }

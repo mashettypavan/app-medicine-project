@@ -1,0 +1,50 @@
+.dashboard-header {
+    width: 100%;
+    background-color: #2F5597; 
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;  
+  
+  }
+
+ 
+.col-auto {
+    padding-right: 0; 
+  }
+  
+  .col {
+    padding-left: 0;
+  }
+ 
+.input-sm {
+    width: 400px; 
+    
+  }
+  
+
+.form-group .row {
+    align-items: center; 
+  }
+  
+  .form-group .col-4 {
+    padding-left: 0; 
+  }
+  
+  .form-group .col-form-label {
+    margin-bottom: 0; 
+  }
+  
+  .form-group .invalid-feedback {
+    margin-top: 0.25rem; 
+  }
+.input-custom{
+    border-color: #000;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.container-fluid{
+  overflow-x: hidden;
+ 
+}

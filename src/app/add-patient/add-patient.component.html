@@ -1,0 +1,137 @@
+
+<div class="dashboard-header">
+    <h1 class="m-2 p-2">Add Patient</h1>
+</div>
+<div class="container-fluid px-0">
+    <div class="row mx-0">
+        <div class="  d-flex flex-column justify-content-start mt-2">
+            <form [formGroup]="bookForm" (ngSubmit)="onSubmit()"
+                class="d-flex flex-column justify-content-start align-items-stretch mx-5">
+                <div class="form-group mb-4">
+                    <div class="row">
+                        <label for="name" class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">Name</label>
+                        <div class="col-4">
+                            <input type="text" id="name" formControlName="name" class="form-control input-custom"
+                                [ngClass]="{ 'is-invalid': nameControl.invalid && (nameControl.dirty || nameControl.touched) }"
+                                (keypress)="onKeyPresss($event)" />
+                            <div *ngIf="nameControl.invalid && (nameControl.dirty || nameControl.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="nameControl.errors?.['required']">Name is required.</div>
+                                <div *ngIf="nameControl.errors?.['minlength']">Minimum length is 5.</div>
+                                <div *ngIf="nameControl.errors?.['maxlength']">Maximum length is 50.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="row">
+                        <label for="number" class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">Number</label>
+                        <div class="col-4">
+                            <input type="text" id="number" formControlName="number" class="form-control  input-custom"
+                                [ngClass]="{ 'is-invalid': numberControl.invalid && (numberControl.dirty || numberControl.touched) }"
+                                (keypress)="onKeyPress($event)" />
+                            <div *ngIf="numberControl.invalid && (numberControl.dirty || numberControl.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="numberControl.errors?.['required']">number is required.</div>
+                                <div *ngIf="numberControl.errors?.['pattern']"> must be a numeric value.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="row">
+                      <label for="address" class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">Address</label>
+                      <div class="col-4">
+                        <input id="address" type="text" formControlName="address" class="form-control input-custom"
+                          maxlength="250"
+                          [ngClass]="{ 'is-invalid': addressControl.invalid && (addressControl.dirty || addressControl.touched) }">
+                        <div *ngIf="addressControl.invalid && (addressControl.dirty || addressControl.touched)" class="invalid-feedback">
+                          <div *ngIf="addressControl.errors?.['required']">address is required.</div>
+                          <div *ngIf="addressControl.errors?.['pattern']">address must contain only letters, numbers, spaces, and special characters.</div>
+                          <div *ngIf="addressControl.errors?.['minlength']">Minimum length is 5 characters.</div>
+                          <div *ngIf="addressControl.errors?.['maxlength']">Maximum length is 250 characters.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                <!-- <div class="form-group mb-4">
+                    <div class="row">
+                        <label for="address" class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">Address</label>
+                        <div class="col-4">
+                            <input id="address" formControlName="address" type="text" class="form-control input-custom"
+                                [ngClass]="{ 'is-invalid': addressControl.invalid && (addressControl.dirty || addressControl.touched) }"
+                                (keypress)="onKeyPress($event)" />
+                            <div *ngIf="addressControl.invalid && (addressControl.dirty || addressControl.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="addressControl.errors?.['required']">Address is required.</div>
+                                <div *ngIf="addressControl.errors?.['minlength']">Minimum length is 5.</div>
+                                <div *ngIf="addressControl.errors?.['maxlength']">Maximum length is 50.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="form-group mb-4">
+                    <div class="row">
+                        <label for="city" class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">City</label>
+                        <div class="col-4">
+                            <input type="text" id="city" formControlName="city" class="form-control input-custom"
+                                [ngClass]="{ 'is-invalid': cityControl.invalid && (cityControl.dirty || cityControl.touched) }"
+                                (keypress)="onKeyPresss($event)" />
+                            <div *ngIf="cityControl.invalid && (cityControl.dirty || cityControl.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="cityControl.errors?.['required']">City Name is required.</div>
+
+                                <div *ngIf="cityControl.errors?.['maxlength']">Maximum length is 50.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="row">
+                        <label for="state"
+                            class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">State</label>
+                        <div class="col-4">
+                            <input type="text" id="state" formControlName="state"
+                                class="form-control input-custom"
+                                [ngClass]="{ 'is-invalid': stateControl.invalid && (stateControl.dirty || stateControl.touched) }"
+                                (keypress)="onKeyPresss($event)" />
+                            <div *ngIf="stateControl.invalid && (stateControl.dirty || stateControl.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="stateControl.errors?.['required']"> State Name is required.</div>
+
+                                <div *ngIf="stateControl.errors?.['maxlength']">Maximum length is 50.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group mb-4">
+                    <div class="row">
+                        <label for="code" class="col-form-label fw-bold text-danger fs-5 mb-0 col-2">Postal Code</label>
+                        <div class="col-4">
+                            <input type="text" id="code" formControlName="code" class="form-control  input-custom"
+                                [ngClass]="{ 'is-invalid': codeControl.invalid && (codeControl.dirty || codeControl.touched) }"
+                                (keypress)="onKeyPress($event)" />
+                            <div *ngIf="codeControl.invalid && (codeControl.dirty || codeControl.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="codeControl.errors?.['required']">Postal code is required.</div>
+                                <div *ngIf="codeControl.errors?.['pattern']">code must be a numeric value.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="form-group mb-4">
+                    <div class="row">
+                        <div class="col-4 offset-2"> <!-- Align button with the form input fields -->
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

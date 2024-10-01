@@ -1,0 +1,42 @@
+<div class="dashboard-header">
+    <h1 class="m-2 p-2">Order details</h1>
+</div>
+
+<div *ngIf="patientData" class="container mt-5">
+    <h1 class="mb-4 text-center text-primary">patient Details</h1>
+    <table class="table table-bordered table-hover table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Field</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>{{ patientData.name }}</td>
+        </tr>
+        <tr>
+          <td><strong>Number</strong></td>
+          <td>{{ patientData.number }}</td>
+        </tr>
+        <tr>
+          <td><strong>Address</strong></td>
+          <td>{{ patientData.address }}</td>
+        </tr>
+        <tr>
+          <td><strong>City</strong></td>
+          <td>{{ patientData.city }}</td>
+        </tr>
+        <tr>
+          <td><strong>State</strong></td>
+          <td>{{ patientData.state }}</td>
+        </tr>
+        <tr>
+          <td><strong>Postal Code</strong></td>
+          <td>{{ patientData.code }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

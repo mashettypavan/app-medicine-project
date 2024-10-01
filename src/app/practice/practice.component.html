@@ -1,0 +1,20 @@
+<h1>API Data</h1>
+
+
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>
+
+
+<div *ngIf="data">
+  <h2>Fetched Data:</h2>
+  <pre>{{ data | json }}</pre> 
+</div>
+
+
+<div *ngIf="data && data.items">
+  <h2>Items:</h2>
+  <ul>
+    <li *ngFor="let item of data.items">{{ item.name }}</li>
+  </ul>
+</div>
